@@ -1,0 +1,28 @@
+name: CI Validation
+on:
+  - push
+
+jobs:
+  build_test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Rust Toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Leverage Cache
+        uses: Swatinem/rust-cache@v1
+      - name: Build Library
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+      - name: Build Unit Test Library
+        working-directory: ./tests/dummy_plugin
+        run: cargo build
+      - name: Run Binary Test
+        uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: ./tests/dummy_plugin/target/debug/*dummy_plugin.dynlib
