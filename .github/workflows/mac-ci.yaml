@@ -1,4 +1,4 @@
-name: CI Validation
+name: Mac CI Validation
 on:
   - push
 
@@ -25,4 +25,4 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: run
-          args: ./tests/dummy_plugin/target/debug/*dummy_plugin.dynlib
+          args: ${PWD}/tests/dummy_plugin/target/debug/*dummy_plugin.dynlib
