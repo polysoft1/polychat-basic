@@ -21,9 +21,6 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: build
-      - name: Build Unit Test Library
-        working-directory: ./tests/dummy_plugin
-        run: cargo build
       - name: Run Unit Tests
         uses: actions-rs/cargo@v1
         with:
