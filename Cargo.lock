@@ -202,19 +202,19 @@ dependencies = [
 
 [[package]]
 name = "polychat-core"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7eca13da74ede573ddf2d72c20db939adc835d787c14cf23ce5c8146fdb18f4c"
+version = "0.1.4"
 dependencies = [
  "libloading",
+ "log",
  "polychat-plugin",
+ "walkdir",
 ]
 
 [[package]]
 name = "polychat-plugin"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e27406ecbda01b1377eaa0426a3f9824cf8a67128e6ac3d64d4b18671bdeb9e"
+checksum = "2db12cbe090ee752646afaad58c9101267e0a8f04178381e08bddefba58235c2"
 dependencies = [
  "cbindgen",
  "libc",
@@ -278,6 +278,15 @@ name = "ryu"
 version = "1.0.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "73b4b750c782965c211b42f022f59af1fbceabdd026623714f104152f1ec149f"
+
+[[package]]
+name = "same-file"
+version = "1.0.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
+dependencies = [
+ "winapi-util",
+]
 
 [[package]]
 name = "serde"
@@ -391,6 +400,17 @@ name = "vec_map"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f1bddf1187be692e79c5ffeab891132dfb0f236ed36a43c7ed39f1165ee20191"
+
+[[package]]
+name = "walkdir"
+version = "2.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "808cf2735cd4b6866113f648b791c6adc5714537bc222d9347bb203386ffda56"
+dependencies = [
+ "same-file",
+ "winapi",
+ "winapi-util",
+]
 
 [[package]]
 name = "winapi"
