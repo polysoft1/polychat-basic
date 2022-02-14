@@ -212,9 +212,9 @@ dependencies = [
 
 [[package]]
 name = "polychat-plugin"
-version = "0.3.0"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2db12cbe090ee752646afaad58c9101267e0a8f04178381e08bddefba58235c2"
+checksum = "77739bd836dd15b390549ffdb49cc51347c542fbad5c41e72f0683d396794b7a"
 dependencies = [
  "cbindgen",
  "libc",
