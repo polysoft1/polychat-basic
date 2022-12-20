@@ -2,10 +2,9 @@ extern crate polychat_core;
 extern crate polychat_plugin;
 
 use std::env;
-use log::error;
+use log::{error, info};
 
 use polychat_core::main::Main;
-use crate::polychat_plugin::plugin::CoreInterface;
 
 fn main() {
     env_logger::init();
@@ -14,6 +13,12 @@ fn main() {
     
     match main.init(&dir_path) {
         Err(e) => error!("Error loading plugin directory, {}", e),
-        Ok(_) => main.test("We good!".to_string())
+        Ok(_) => {
+            let plugins = main.get_plugin_names();
+            info!("Found {} plugins", plugins.len());
+            for plugin in plugins {
+                info!("\tFound {} plugin for {} protocol", plugin.clone(), main.get_plugin_by_name(plugin).unwrap().get_protocol_name());
+            }
+        }
     };
 }
